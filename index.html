@@ -1,72 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Institución Académica Nova</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Institución Académica Nova</h1>
-  <p>Formando líderes en tecnología e inteligencia artificial</p>
-</header>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Institución Académica Nova</h1>
+      <p>Formando profesionales del futuro en tecnología e innovación</p>
+      <a href="#chat" class="btn">Habla con nuestro asistente IA</a>
+    </div>
+  </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#programas">Programas</a>
-  <a href="#calendario">Calendario</a>
-  <a href="#ia">Asistente IA</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+  <!-- SOBRE NOSOTROS -->
+  <section class="section">
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      La Institución Académica Nova es un centro educativo enfocado en la formación
+      tecnológica moderna, preparando estudiantes para los desafíos del mundo digital.
+    </p>
+  </section>
 
-<section id="inicio">
-  <h2>¿Quiénes somos?</h2>
-  <p>
-    La Institución Académica Nova es una entidad educativa enfocada en la
-    formación tecnológica, ciberseguridad e inteligencia artificial,
-    preparando a los estudiantes para los retos del mundo digital.
-  </p>
-</section>
+  <!-- PROGRAMAS -->
+  <section class="section bg-light">
+    <h2>Nuestros Programas Académicos</h2>
 
-<section id="programas">
-  <h2>Programas Académicos</h2>
-  <ul>
-    <li>Técnico en Ciberseguridad</li>
-    <li>Fundamentos de Inteligencia Artificial</li>
-    <li>Automatización con n8n</li>
-    <li>Agentes de IA aplicados a la educación</li>
-  </ul>
-</section>
+    <div class="programas">
 
-<section id="calendario">
-  <h2>Calendario Académico</h2>
-  <p><strong>Inicio de clases:</strong> 5 de febrero</p>
-  <p><strong>Duración del ciclo:</strong> 6 meses</p>
-  <p><strong>Modalidad:</strong> Virtual y presencial</p>
-</section>
+      <div class="card">
+        <img src="images/sistemas.jpg" alt="Ingeniería de Sistemas">
+        <h3>Ingeniería de Sistemas</h3>
+        <p>Desarrollo de software, bases de datos, redes y arquitectura tecnológica.</p>
+      </div>
 
-<section id="ia">
-  <h2>Asistente Académico IA</h2>
-  <p>Haz preguntas sobre programas, calendario o procesos académicos.</p>
+      <div class="card">
+        <img src="images/ciberseguridad.jpg" alt="Ciberseguridad">
+        <h3>Ciberseguridad</h3>
+        <p>Protección de sistemas, hacking ético y defensa digital avanzada.</p>
+      </div>
 
-  <div class="chat-box">
-    <input type="text" id="pregunta" placeholder="Escribe tu pregunta..." />
-    <button onclick="enviarPregunta()">Preguntar</button>
-    <div id="respuesta"></div>
-  </div>
-</section>
+      <div class="card">
+        <img src="images/ia.jpg" alt="Inteligencia Artificial">
+        <h3>Inteligencia Artificial</h3>
+        <p>Machine Learning, agentes IA y automatización inteligente.</p>
+      </div>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>Email: contacto@institucionnova.edu</p>
-  <p>Teléfono: +57 300 123 4567</p>
-</section>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2026 Institución Académica Nova</p>
-</footer>
+  <!-- INFORMACIÓN ACADÉMICA -->
+  <section class="section">
+    <h2>Información Académica</h2>
+    <ul class="info">
+      <li><strong>Inicio de clases:</strong> Febrero y Agosto</li>
+      <li><strong>Duración:</strong> 8 semestres</li>
+      <li><strong>Modalidad:</strong> Presencial y Virtual</li>
+      <li><strong>Horario:</strong> Lunes a Viernes</li>
+    </ul>
+  </section>
 
-<script src="script.js"></script>
+  <!-- CHAT IA -->
+  <section id="chat" class="section bg-dark">
+    <h2>Asistente Virtual Nova 🤖</h2>
+    <div class="chat-box">
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta...">
+      <button onclick="enviarPregunta()">Preguntar</button>
+      <p id="respuesta"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Institución Académica Nova · Educación para el futuro</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
