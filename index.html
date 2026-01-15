@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Institución Académica Nova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f2f4f8;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0a2540, #133b6e);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0a2540;
+      font-weight: 600;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section h2 {
+      color: #0a2540;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .info-list li {
+      margin-bottom: 8px;
+    }
+
+    .chat-container {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .chat-box {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+
+    .msg {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .user {
+      background: #dce9ff;
+    }
+
+    .bot {
+      background: #eeeeee;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #0a2540;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #133b6e;
+    }
+
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Institución Académica Nova</h1>
+  <p>Educación tecnológica orientada al futuro digital</p>
+</header>
+
+<nav>
+  <a href="#institucion">Institución</a>
+  <a href="#programas">Programas</a>
+  <a href="#academico">Información Académica</a>
+  <a href="#chat">Asistente IA</a>
+</nav>
+
+<section id="institucion">
+  <h2>Sobre la Institución</h2>
+  <p>
+    La Institución Académica Nova es un centro educativo enfocado en la formación
+    de profesionales en tecnología, ciberseguridad e inteligencia artificial.
+    Nuestro modelo académico combina teoría, práctica y herramientas digitales
+    de última generación.
+  </p>
+</section>
+
+<section id="programas">
+  <h2>Programas Académicos</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Ingeniería de Sistemas</h3>
+      <p>Formación integral en desarrollo de software, bases de datos y arquitectura tecnológica.</p>
+    </div>
+    <div class="card">
+      <h3>Ciberseguridad</h3>
+      <p>Protección de sistemas, análisis de vulnerabilidades y seguridad informática.</p>
+    </div>
+    <div class="card">
+      <h3>Inteligencia Artificial</h3>
+      <p>Aprendizaje automático, automatización y uso ético de la IA.</p>
+    </div>
+  </div>
+</section>
+
+<section id="academico">
+  <h2>Información Académica</h2>
+  <ul class="info-list">
+    <li><b>Inicio de clases:</b> Primera semana de febrero y agosto</li>
+    <li><b>Duración del ciclo:</b> 16 semanas</li>
+    <li><b>Modalidad:</b> Presencial y virtual</li>
+    <li><b>Horario:</b> Lunes a viernes (7:00 a.m. – 6:00 p.m.)</li>
+    <li><b>Contacto:</b> admisiones@institutonova.edu</li>
+  </ul>
+</section>
+
+<section id="chat">
+  <h2>Asistente Virtual Nova</h2>
+  <div class="chat-container">
+    <div class="chat-box" id="chat"></div>
+    <input id="input" placeholder="Pregunta sobre la institución..." />
+    <button onclick="enviar()">Enviar</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 Institución Académica Nova · Educación e Innovación
+</footer>
+
+<script>
+async function enviar() {
+  const input = document.getElementById("input");
+  const chat = document.getElementById("chat");
+  const mensaje = input.value;
+
+  if (!mensaje) return;
+
+  chat.innerHTML += `<div class="msg user"><b>Tú:</b> ${mensaje}</div>`;
+  input.value = "";
+
+  const response = await fetch("AQUI_VA_TU_WEBHOOK_N8N", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: mensaje })
+  });
+
+  const data = await response.json();
+  chat.innerHTML += `<div class="msg bot"><b>IA:</b> ${data.reply}</div>`;
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
