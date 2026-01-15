@@ -12,7 +12,7 @@ async function enviarPregunta() {
   respuestaDiv.innerText = "Pensando...";
 
   try {
-    const response = await fetch("URL_DE_TU_WEBHOOK_N8N", {
+    const response = await fetch("http://localhost:5678/webhook-test/chat-ia", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
