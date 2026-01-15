@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Institución Académica Nova IA</title>
+  <title>Institución Académica Nova</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,15 +16,16 @@
   <a href="#inicio">Inicio</a>
   <a href="#programas">Programas</a>
   <a href="#calendario">Calendario</a>
+  <a href="#ia">Asistente IA</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
 <section id="inicio">
   <h2>¿Quiénes somos?</h2>
   <p>
-    La Institución Académica Nova es un centro educativo enfocado en la
+    La Institución Académica Nova es una entidad educativa enfocada en la
     formación tecnológica, ciberseguridad e inteligencia artificial,
-    preparando a los estudiantes para los desafíos del futuro digital.
+    preparando a los estudiantes para los retos del mundo digital.
   </p>
 </section>
 
@@ -43,6 +44,17 @@
   <p><strong>Inicio de clases:</strong> 5 de febrero</p>
   <p><strong>Duración del ciclo:</strong> 6 meses</p>
   <p><strong>Modalidad:</strong> Virtual y presencial</p>
+</section>
+
+<section id="ia">
+  <h2>Asistente Académico IA</h2>
+  <p>Haz preguntas sobre programas, calendario o procesos académicos.</p>
+
+  <div class="chat-box">
+    <input type="text" id="pregunta" placeholder="Escribe tu pregunta..." />
+    <button onclick="enviarPregunta()">Preguntar</button>
+    <div id="respuesta"></div>
+  </div>
 </section>
 
 <section id="contacto">
